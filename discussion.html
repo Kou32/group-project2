@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search</title>
+    <title>Discussion</title>
     <link rel="stylesheet" href="./public/cs/style.css">
 </head>
 <body>
@@ -22,9 +22,14 @@
         </div>
     </header>
 
-    <div class="movie-container" id="movie-container"></div>
+    <div class="discussion-container" id="discussion-container"></div>
 
+    <div class="topic-container">
+        <h2>Start a Discussion</h2>
+        <input type="text" id="topic-input" placeholder="Enter your topic...">
+        <button onclick="startDiscussion()">Start Discussion</button>
+    </div>
 
-    <script src="./public/js/script.js"></script>
+    <script src="./public/js/discussion.js"></script>
 </body>
 </html>

@@ -1,13 +1,20 @@
-async function searchMovies() {
+document.addEventListener('DOMContentLoaded', () => {
+    const previousSearchQuery = localStorage.getItem('searchQuery');
+
+    if (previousSearchQuery) {
+        searchMovies(previousSearchQuery);
+    }
+});
+
+async function searchMovies(query = null) {
     const apiKey = 'c5d6f49c';
-    const query = document.getElementById('search-input').value;
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}`;
+    const searchQuery = query || document.getElementById('search-input').value;
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchQuery}`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
         
-        // Check if the API returned any movies
         if (data.Response === "True") {
             renderMovies(data.Search);
         } else {
@@ -20,7 +27,7 @@ async function searchMovies() {
 
 function renderMovies(movies) {
     const movieContainer = document.getElementById('movie-container');
-    movieContainer.innerHTML = ''; // Clear previous results
+    movieContainer.innerHTML = '';
 
     movies.forEach(movie => {
         const movieElement = document.createElement('div');
@@ -32,6 +39,21 @@ function renderMovies(movies) {
             <img src="${movie.Poster}" alt="${movie.Title} Poster">
         `;
         
+        movieElement.addEventListener('click', () => {
+            localStorage.setItem('selectedMovie', JSON.stringify(movie));
+            window.location.href = 'discussion.html';
+        });
+
         movieContainer.appendChild(movieElement);
     });
+
+    localStorage.setItem('searchQuery', searchQuery);
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        const query = document.getElementById('search-input').value;
+        localStorage.setItem('searchQuery', query);
+        searchMovies();
+    }
 }
