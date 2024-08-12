@@ -1,3 +1,7 @@
-DROP DATABASE IF EXISTS museum_db;
+\c postgres;
 
-CREATE DATABASE museum_db;
+DROP DATABASE IF EXISTS eastereggs_db;
+CREATE DATABASE eastereggs_db;
+
+\c eastereggs_db;
+
