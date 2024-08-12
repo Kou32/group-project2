@@ -1,0 +1,13 @@
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <!-- Call the helper function with triple brackets to render the span as HTML -->
+    {{#each data as |project|}}
+    <h2>{{project.dataValues.name}}</h2>
+    <div class="col-md-6">
+     <span class="dollar-amount" >${{project.dataValues.needed_funding}}</span><br/>
+      {{project.dataValues.description}}<br />
+      {{project.dataValues.user.dataValues.name}}
+    </div>
+    {{/each}}
+  </div>
+</div>
