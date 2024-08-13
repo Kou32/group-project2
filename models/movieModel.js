@@ -37,10 +37,6 @@ Movie.init(
     type: DataTypes.INTEGER,
     allowNull: false,
     },
-    internal_rating: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
   },
   {
     sequelize,
@@ -51,4 +47,4 @@ Movie.init(
   }
 );
 
-module.exports = movie;
+module.exports = Movie;

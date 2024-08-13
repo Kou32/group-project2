@@ -36,6 +36,10 @@ User.init(
                 len: [8],
             },
         },
+        date_created: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        }
     },
     {
         hooks: {

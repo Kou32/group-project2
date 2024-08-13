@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Discussion extends Model {}
@@ -31,11 +32,15 @@ Discussion.init(
     type: DataTypes.INTEGER,
     allowNull: false,
     },
-    internal_rating: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    movie_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'movie',
+        key: 'id',
       },
+    },
   },
+
   {
     sequelize,
     timestamps: false,
