@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="./public/cs/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <a href="index.html" id="header-logo">
+                <h1>EGGHEAD</h1>
+            </a>
+        </div>
+        <div class="header-center">
+            <input type="text" id="search-input" placeholder="Search for a movie..." onkeypress="handleKeyPress(event)">
+            <button onclick="searchMovies()">Search</button>
+        </div>
+        <div class="header-right">
+            <span>Login/Out | Profile</span>
+        </div>
+    </header>
+
+    <div class="movie-container" id="movie-container"></div>
+
+
+    <script src="./public/js/script.js"></script>
+</body>
+</html>
