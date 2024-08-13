@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch(url);
             const data = await response.json();
 
+            // Here we know the id of the movie on the page
+            // Discussions for each movie are tied to the movie id 
+            const resp = await fetch(`/api/discussion?movie=${data.imdbID}`)
+            const discussions = await resp.json()
+
             if (data.Response === "True") {
                 renderMovieDetails(data);
             } else {
