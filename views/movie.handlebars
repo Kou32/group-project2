@@ -1,0 +1,33 @@
+            <div id="rightSide" class="row col-lg-12 col-md-12">
+                <div id="movieInfo" class="row col-lg-12 col-md-12">
+                    <div id="fromAPI" class="col-lg-10 col-md-10 row">
+                        <div id="moviePoster" class="col-lg-3">
+                            {{movie_poster}}
+                        </div>
+                        <div id="movieInfo" class="col-lg-9 col-md-9">
+                            {{movie_title}}, {{release_year}}
+                            Director: {{director}}
+                            Writer: {{movie_writer}}
+                            Cast: {{movie_actor}}
+                        </div>
+                    </div>
+                    <div id="disContainer" class="col-lg-12 col-md-12 flex-fill border">
+                        {{#if loggedIn}}
+                        <label class="text-center col-lg-12 col-md-12">
+                            A basket for the Easter Eggs
+                        </label>
+                        <div id="discTopicsContainer">
+                            {{#if discThreads !== null}}
+                            {{topics}}
+                            {{else}}
+                            <label>Start the hunt!</label></br>
+                            <input type="text">
+                            <button type="submit">Create thread</button>
+                            {{/if}}
+                        </div>
+                        {{else}}
+                        <button type="button">Log in to join the discussion!</button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
