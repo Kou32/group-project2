@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 const Discussion = require('./discussionModel')
 const User = require('./userModel');
@@ -32,4 +30,3 @@ Comment.belongsToMany(Discussion,{
   })
 
   module.exports = { User, Discussion, ChatRoom, Comment };
->>>>>>> c2506c449b4e0eaa2268d6d77ecb6f3d34fd6489
