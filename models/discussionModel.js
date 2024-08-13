@@ -11,6 +11,18 @@ Discussion.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // movie_id: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // title: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // created_by: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     text: {
       type: DataTypes.STRING,
       // prevents null values
