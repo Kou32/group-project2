@@ -1,13 +1,32 @@
-const Movie = require('./movieModel')
+
 const Discussion = require('./discussionModel')
 const User = require('./userModel');
+const Comment = require('./commentModel')
+const ChatRoom = require('./chatRoomModel')
 
-Movie.hasMany(Discussion, {
-    foreignKey: 'movie_id',
-  });
+
+User.hasMany(Discussion, {
+  foreignKey: 'User_id'
+});
+
+Discussion.belongsToMany(User, {
+  foreignKey: 'User_id'
+});
+
+Discussion.belongsToMany(Comment,{
+    through: {
+      model: ChatRoom,
+      unique: false
+    },
+    as: 'Discussions_to_Movies'
+  })
   
-Discussion.belongsTo(Movie, {
-    foreignKey: 'movie_id',
-  });
-  
-  module.exports = { User, Movie, Discussion };
+Comment.belongsToMany(Discussion,{
+    through: {
+      model: ChatRoom,
+      unique: false
+    },
+    as: 'Comments_To_Discussions'
+  })
+
+  module.exports = { User, Discussion, ChatRoom, Comment };
