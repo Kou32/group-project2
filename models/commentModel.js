@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Movie extends Model {}
+class Comment extends Model {}
 
-Movie.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,40 +11,28 @@ Movie.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    text: {
       type: DataTypes.STRING,
       // prevents null values
       allowNull: false,
       // will only allow alphanumeric characters
-      validate: {
-        isAlphanumeric: true,
+    },
+    discussion_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'discussion',
+        key: 'id',
       },
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: false,
-    },
-    director: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    release_year: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    public_rating: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
     },
   },
+
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'movie',
+    modelName: 'comment',
   }
 );
 
-module.exports = Movie;
+module.exports = Comment;
