@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // Import the Project model from the models folder
-const { Project, User } = require('../../models');
+const { User } = require('../../models');
 
 
 router.get('/login', (req, res) => {
