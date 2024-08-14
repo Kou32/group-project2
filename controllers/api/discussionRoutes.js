@@ -1,3 +1,5 @@
+//discussion = topic
+//comment = replies
 const router = require('express').Router();
 // Import the Project model from the models folder
 const { Discussion, User } = require('../../models')
