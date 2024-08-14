@@ -1,3 +1,4 @@
+//this is the topics
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -13,6 +14,13 @@ Discussion.init(
     },
     movie_id: {
       type: DataTypes.STRING,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
     text: {
       type: DataTypes.STRING,
