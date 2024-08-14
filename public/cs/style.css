@@ -8,7 +8,7 @@ body {
 }
 
 /* Header Styles */
-.main-header {
+#main-header {
     background-color: orange;
     color: white;
     padding: 15px 20px;
@@ -20,6 +20,10 @@ body {
 header a {
     text-decoration: none;
     color: white;
+}
+
+#leftBorder {
+    border: 1px solid rgb(155, 53, 227);
 }
 
 .header-left h1 {
@@ -40,6 +44,14 @@ header a {
     margin-right: 10px;
 }
 
+#saying {
+    background-color: orange;
+    border-bottom: 5px solid pink;
+}
+#seeSmthg {
+    color: white;
+}
+
 .header-center button {
     padding: 5px 10px;
     background-color: #fff;
@@ -54,6 +66,11 @@ header a {
 
 .header-right span {
     font-size: 16px;
+}
+
+footer {
+    background-color: rgb(157, 74, 225);
+    padding: 10px;
 }
 
 /* Movie Search Page Styles */
