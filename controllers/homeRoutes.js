@@ -8,6 +8,24 @@ router.get('/', async (req,res) => {
     //res.render("xyz")
 })
 
+router.get('/login', async (req,res) => {
+    res.render('login')
+})
+
+router.get('/profile', async (req,res) => {
+    res.render('profile')
+})
+
+router.get('/movie', (req, res) => {
+    console.log('Rendering view: movie with layout: movie');
+    res.render('profile', { layout: 'movie' });
+});
+
+module.exports = router;
+// router.get('/movie:id', async (req, res) => {
+//     res.render('movie', { layout: 'movie'})
+// })
+
 //right in this file (anything that is not an api route) would go right in this file
 //anything in the api folder goes throughh the api routes. 
 //individual movie could go here
@@ -18,4 +36,4 @@ router.get('/', async (req,res) => {
 // router.get('/')
 
 
-module.exports = router;
+
